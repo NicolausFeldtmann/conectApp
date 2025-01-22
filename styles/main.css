@@ -1,0 +1,45 @@
+body{
+    max-width:1024;
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.content{
+    display: flex;
+}
+
+.messageBoard{
+    background-color: aquamarine;
+    width: 488px;
+    height: 600px;
+    margin: 72px 0px 0px 72px;
+}
+
+.comming{
+    background-color: antiquewhite;
+    width: 440px;
+    height: 100vh;
+}
+
+.postInputArea{
+    width: 488px;
+    display: flex;
+    flex-direction: column;
+    margin: 32px 0px 0px 72px;
+}
+
+.options{
+    background-color: brown;
+    width: 488px;
+    height: 600px;
+    margin: 72px 0px 0px 72px;
+}
+
+.enterBtn:hover{
+    cursor: pointer;
+}
