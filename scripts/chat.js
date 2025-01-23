@@ -4,39 +4,58 @@ async function init() {
     renderPost();
 }
 
-function addPost() {
+async function addPost() {
     let nameInputRef = document.getElementById('nameInput');
-    let nameInput = nameInputRef.value;
+    let nameInput = nameInputRef.value.trim();
     let messageInputRef = document.getElementById('messageInput');
-    let messageInput = messageInputRef.value;
+    let messageInput = messageInputRef.value.trim();
 
-    if (nameInputRef.value + messageInputRef.value ==0) {
-        alert('Kein Name, Keine Nachricht... KEIN POST!')
+    // Überprüfungen
+    if (!nameInput && !messageInput) {
+        alert('Kein Name, Keine Nachricht... KEIN POST!');
         return false;
     }
 
-    if (nameInputRef.value ==0) {
-        alert('Wer bist du ?!')
+    if (!nameInput) {
+        alert('Wer bist du ?!');
         return false;
     }
 
-    if(messageInputRef.value ==0) {
-        alert('Nichts zu sagen?!')
+    if (!messageInput) {
+        alert('Nichts zu sagen?!');
         return false;
     }
+    
+    // Objekt für den neuen Post erstellen
+    const newPost = {
+        name: nameInput,
+        message: messageInput,
+    };
 
-    namePost.push(nameInput);
-    message.push(messageInput);
-    nameInputRef.value ="";
-    messageInputRef.value ="";
+    // Post an die API senden
+    try {
+        const response = await fetch("https://conect-d9109-default-rtdb.europe-west1.firebasedatabase.app/post.json", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newPost)
+        });
 
-    saveLocal();
-    renderPost();
-}
+        if (!response.ok) {
+            throw new Error("Fehler beim Speichern des Posts.");
+        }
 
-function saveLocal() {
-    localStorage.setItem("namePost", JSON.stringify(namePost));
-    localStorage.setItem("message", JSON.stringify(message));
+        // Eingabefelder zurücksetzen
+        nameInputRef.value = "";
+        messageInputRef.value = "";
+
+        // Posts neu laden und rendern
+        await loadPosts("post");
+
+    } catch (error) {
+        console.log("Fehler beim Speichern des Posts:", error);
+    }
 }
 
 function renderPost() {
