@@ -1,6 +1,7 @@
 const BASE_URL = "https://conect-d9109-default-rtdb.europe-west1.firebasedatabase.app/"
 
 let post = [];
+let userName = [];
 
 async function loadPosts(path = "") {
     try {

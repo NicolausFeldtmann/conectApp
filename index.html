@@ -12,11 +12,14 @@
     <title>conect</title>
 </head>
 <body onload="init()">
-    <nav>
-        <div class="archiv">archiv</div>
-        <div class="deleted">papirkorb</div>
-        <h1>conect</h1>
-    </nav>
+
+    <div id="enterScreen" class="enterScreen">
+        <div class="enterBanner">
+            <h2>Please enter Username.</h2>
+            <input id="inputName" type="text" placeholder="name...">
+            <button id="entrtBtn" onclick="enterName()">ENTER</button>
+        </div>
+    </div>
 
     <div class="content">
         <div class="comming">
@@ -28,11 +31,10 @@
         <div class="chat">
             <div id="chat" class="messageBoard"></div>
             <div class="postInputArea">
-                <input id="nameInput" type="text" placeholder="name">
                 <textarea id="messageInput" placeholder="message..."></textarea>
                 <div class="chatBtnArea">
                     <div id="enter" class="enterBtn" onclick="addPost()">enter</div>
-                     <img id="erase" class="erase" src="/assets/img/x.png.png">
+                     <div id="erase" class="erase" onclick="deleteAllPosts()">DELETE ALL!</div>
                 </div>
             </div>
         </div>
