@@ -2,6 +2,7 @@ body{
     background: url(/assets/img/background.jpg);
     max-width:1024;
     margin: 0;
+    font-family: "Outfit";
 }
 
 nav{
@@ -58,79 +59,6 @@ h2{
     display: flex;
 }
 
-.messageBoard{
-    padding: 1px 0px 0px 0px;
-    width: 488px;
-    height: 535px;
-    margin: 36px 0px 0px 72px;
-    backdrop-filter: blur(5px);
-    border-radius: 15px;
-    box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.5), inset 0px -3px 6px -2px rgba(0, 0, 0, 0.3);
-    border-radius: solid rgb(255, 255, 255) 1px;
-    overflow-y: scroll;
-}
-
-.comming{
-    background: url(/assets/img/bildings.jpg);
-    width: 440px;
-    height: 100vh;
-}
-
-.postInputArea{
-    width: 488px;
-    display: flex;
-    flex-direction: column;
-    margin: 32px 0px 0px 72px;
-}
-
-.post{
-    min-width: 148px;
-    min-height: 148px;
-    margin: 16px 16px 16px 16px;
-    padding: 8px 8px 8px 8px;
-    border-radius: 15px;
-    background-color: rgba(202, 89, 252, 1);
-    background-image: linear-gradient(90deg, rgba(202, 89, 252, 1) 0%, rgba(74, 50, 231, 1) 100%);
-    -webkit-box-shadow: 13px 12px 29px -7px rgb(57, 255, 146);
-    -moz-box-shadow: 13px 12px 29px -7px rgba(229, 57, 255, 1);
-    box-shadow: 13px 12px 29px -7px rgba(229, 57, 255, 1);  
-}
-
-.postedName{
-    color: aliceblue;
-    text-decoration: underline;
-    text-shadow: 11px 7px 15px rgba(66, 68, 90, 1);
-}
-
-.postedMessage{
-    color: lightskyblue;
-    text-shadow: 11px 7px 15px rgba(66, 68, 90, 1);
-}
-
-input{
-    color: lightskyblue;;
-    padding: 0px 8px 0px 8px;
-    margin: 0px 0px 16px 0px;
-    height: 48px;
-    font-size: 28px;
-    text-shadow: 11px 7px 15px rgba(66, 68, 90, 1);
-    background: transparent;
-    backdrop-filter: blur(15px);
-    border-radius: 15px;
-    box-shadow: inset 0px 12px 25px 5px rgba(0, 0, 0, 0.4);
-}
-
-textarea{
-    height: 80px;
-    padding: 0px 8px 0px 8px;
-    font-size: 28px;
-    text-shadow: 11px 7px 15px rgba(66, 68, 90, 1);
-    background: transparent;
-    backdrop-filter: blur(15px);
-    border-radius: 15px;
-    box-shadow: inset 0px 12px 25px 5px rgba(0, 0, 0, 0.4);
-}
-
 .options{
     background: url(/assets/img/firefly.jpg);
     width: 488px;
@@ -138,34 +66,12 @@ textarea{
     margin: 72px 0px 0px 72px;
 }
 
-.enterBtn{
-    background-color: aliceblue;
-    width: 128px;
-    margin: 8px 0px 0px 0px;
-    padding: 8px 8px 8px 8px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    font-size: 28px;
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; 
 }
 
-.chatBtnArea{
-    display: flex;
-    justify-content: space-around;
-}
-
-.enterBtn:hover{
-    cursor: pointer;
-}
-
-.erase{
-    width: 48px;
-    margin: 8px 0px 0px 0px;
-    padding: 8px 8px 8px 8px;
-    background: radial-gradient(at 98% 28%, #ed7d31 0px, transparent 50%), radial-gradient(at 9% 19%, #6c5f5b 0px, transparent 50%), radial-gradient(at 44% 63%, #4f4a45 0px, transparent 50%), radial-gradient(at 84% 2%, #f6f1ee 0px, transparent 50%), #ed7d31;
-    border-radius: 10px;
-}
-
-.erase:hover{
-    cursor: pointer;
+.showTemplate{
+    visibility: visible;
+    opacity: 1;
 }

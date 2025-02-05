@@ -1,0 +1,27 @@
+.options{
+    justify-content: center;
+    display: flex;
+}
+.addEvetBtn{
+    background: radial-gradient(at 98% 28%, #ed31df 0px, transparent 50%), radial-gradient(at 9% 19%, #d33200 0px, transparent 50%), radial-gradient(at 44% 63%, #f91a1a 0px, transparent 50%), radial-gradient(at 84% 2%, #f6f1ee 0px, transparent 50%), #9f3d85;
+    width: 288px;
+    height: max-content;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 36px 36px 36px 36px;
+    padding: 16px 16px 16px 16px;
+    border: solid 1px black;
+}
+
+.addEvetBtn:hover{
+    cursor: pointer;
+    box-shadow: 19px 16px 21px 0px rgba(0,0,0,0.75) inset;
+    -webkit-box-shadow: 19px 16px 21px 0px rgba(0,0,0,0.75) inset;
+    -moz-box-shadow: 19px 16px 21px 0px rgba(0,0,0,0.75) inset;
+}
+
+.eventIcon{
+    width: 64px;
+}
