@@ -1,10 +1,4 @@
 
-async function init() {
-    await loadPosts("post");
-    await loadEvent("addedEvent");
-    renderPost();
-    renderCalender();
-}
 
 function enterName() {
     let inputName = document.getElementById('inputName');
@@ -96,4 +90,8 @@ function renderPost() {
         let message = currentPost.message; 
         postRef.innerHTML += getPostTemplate(idxNote, name, message);
     }
+    
+    setTimeout(() => {
+        postRef.scrollTop = postRef.scrollHeight; 
+    }, 100);
 }

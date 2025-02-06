@@ -21,27 +21,26 @@ async function loadPosts(path = "") {
     } catch (error) {
         console.log("Fehler beim Laden der Nachrichten:", error);
     }
-    console.log(post);
-    
     renderPost(); 
 }
 
 async function loadEvent(path = "") {
     try {
-        let response= await fetch(CALENDER_URL + path + ".json");
+        let response = await fetch(CALENDER_URL + path + ".json");
         let responseToJson = await response.json();
 
-        addedEvent = [];
+        let events = []; 
 
         if (responseToJson) {
             for (let key in responseToJson) {
-                addedEvent.push(responseToJson[key]);
+                events.push(responseToJson[key]); 
             }
         }
+
     } catch (error) {
-        console.log("Fehler beim laden der Events:". error);
+        console.log("Fehler beim Laden der Events:", error);
     }
-    console.log(addedEvent);
-    renderCalender();
+    renderCalender(); 
 }
+
 

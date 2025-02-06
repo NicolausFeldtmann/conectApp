@@ -1,43 +1,33 @@
 async function addEvent() {
-    let eventName = document.getElementById('eventName');
-    let eventDate = document.getElementById('eventDate');
-    let eventCat = document.getElementById('eventCat');
-    let eventHost = document.getElementById('eventHost');
+    let inputTitelRef = document.getElementById('evetName');
+    let inputDateRef = document.getElementById('eventDate');
+    let inputCatRef = document.getElementById('eventCat');
+    let inputHostRef = document.getElementById('eventHost');
+
+    let titelInput = inputTitelRef.value.trim();
+    let dateInput = inputDateRef.value.trim();
+    let catInput = inputCatRef.value.trim();
+    let hostInput = inputHostRef.value.trim();
 
     let newEvent = {
-        evName: eventName,
-        evDate: eventDate,
-        evCat: eventCat,
-        evHost: eventHost,
-    }
+        titel: titelInput,
+        date: dateInput,
+        cat: catInput,
+        host: hostInput, 
+    };
     await saveEventToApi(newEvent);
 }
 
-async function saveEventToApi(event) {
-    const response = await fetch("https://connectcalender-44632-default-rtdb.europe-west1.firebasedatabase.app/addedEvent.json", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(event)
-    });
-
-    if (!response.ok) {
-        throw new Error("Fehler beim speichern der Events.");
-        
-    }
-}
-
 function renderCalender() {
-    let eventRef = document.getElementById('comming');
+    let eventRef = document.getElementById('addEvent');
     eventRef.innerHTML = "";
 
-    for(let idx = 0; idx < addedEvent.length; idx++) {
+    for (let idx = 0; idx < addedEvent.length; idx++) {
         let currentEvent = addedEvent[idx];
-        let titel = currentEvent.evName;
-        let date = currentEvent.evDate;
-        let cat = currentEvent.evCat;
-        let host = currentEvent.evHost;
-        eventRef.innerHTML += getEventTemplate(titel, date, cat, host);
+        let titel = currentEvent.titel;
+        let date = currentEvent.date;
+        let cat = currentEvent.cat;
+        let host = currentEvent.host;
+        eventRef.innerHTML += getEventTemplate(idx, titel, date, cat, host);
     }
 }
