@@ -1,7 +1,9 @@
 
 async function init() {
     await loadPosts("post");
+    await loadEvent("addedEvent");
     renderPost();
+    renderCalender();
 }
 
 function enterName() {
